@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqdlrc7sbi0sv"]
+
+[ext_resource type="PackedScene" uid="uid://b5t70ddfgye28" path="res://graphics/characters/god/dude.glb" id="1_dnfwl"]
+
+[node name="dude" instance=ExtResource("1_dnfwl")]
+
+[node name="Skeleton3D" parent="metarig" index="0"]
+bones/0/position = Vector3(0.00285972, 0.898105, -0.074772)
+bones/0/rotation = Quaternion(0.0415755, 0.00156719, 0.00194149, 0.999132)
+bones/1/rotation = Quaternion(0.014338, -0.00167326, -0.00185085, 0.999894)
+bones/2/position = Vector3(0.0178498, 0.716383, 0.0839952)
+bones/2/rotation = Quaternion(-0.535736, -0.482403, -0.423155, 0.54883)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.0301738, 0.726144, -0.0664364, 0.68366)
+bones/5/position = Vector3(-0.0187497, 0.71652, 0.0838747)
+bones/5/rotation = Quaternion(-0.559998, 0.437991, 0.39822, 0.579644)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(-0.00252, 0.268327, -0.00753833)
+bones/6/rotation = Quaternion(0.0450992, -0.719768, 0.0990095, 0.685636)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.0765461, 0.0719297, 0.039662, 0.993677)
+bones/8/position = Vector3(0.0996923, 0.0967284, 0.0640255)
+bones/8/rotation = Quaternion(0.999373, 0.00644179, 0.000972602, 0.0348086)
+bones/8/scale = Vector3(1, 1, 1.00001)
+bones/9/rotation = Quaternion(0.999343, -0.00995844, 0.00216326, 0.0347838)
+bones/9/scale = Vector3(1, 1, 1.00001)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "metarig"
