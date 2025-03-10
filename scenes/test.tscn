@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsf748pantw5j"]
+
+[ext_resource type="Script" uid="uid://c6by6ipnc32xj" path="res://scripts/mesh_instance_3d.gd" id="1_f37am"]
+[ext_resource type="PackedScene" uid="uid://hp80sfkk3g5h" path="res://scenes/entities/player/player2.tscn" id="2_hk7n5"]
+[ext_resource type="PackedScene" uid="uid://cqdlrc7sbi0sv" path="res://scenes/entities/god/god.tscn" id="3_7ypqr"]
+[ext_resource type="PackedScene" uid="uid://cb1f11omjv2lr" path="res://scenes/entities/rainbowEnderman/rainbow_enderman.tscn" id="4_8cac6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k7yh2"]
+sky_top_color = Color(0.931651, 0.49717, 1, 1)
+sky_horizon_color = Color(0.732913, 0.624293, 0.75, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.732913, 0.624293, 0.75, 1)
+
+[sub_resource type="Sky" id="Sky_qit1t"]
+sky_material = SubResource("ProceduralSkyMaterial_k7yh2")
+
+[sub_resource type="Environment" id="Environment_ybyal"]
+background_mode = 2
+sky = SubResource("Sky_qit1t")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjjha"]
+albedo_color = Color(0.854902, 0.447059, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_mwpjf"]
+material = SubResource("StandardMaterial3D_sjjha")
+inner_radius = 0.22
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3l0v5"]
+size = Vector3(40, 0.5, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2cwkt"]
+size = Vector3(10, 10, 0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ybyal")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.962692, -0.120741, 0.24217, 0, 0.894934, 0.446198, -0.270601, 0.429551, -0.861546, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.376149, -0.278335, -0.883766, 0.594823, 0.803857, 0, 0.710421, -0.525684, 0.46793, 0, 0.809488, 10.586)
+mesh = SubResource("TorusMesh_mwpjf")
+script = ExtResource("1_f37am")
+
+[node name="Entities" type="Node3D" parent="."]
+
+[node name="player" parent="Entities" instance=ExtResource("2_hk7n5")]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/StaticBody3D"]
+size = Vector3(40, 0.5, 40)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+shape = SubResource("BoxShape3D_3l0v5")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.06813)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/StaticBody3D2"]
+size = Vector3(10, 10, 0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D2"]
+shape = SubResource("BoxShape3D_2cwkt")
+
+[node name="God" parent="." instance=ExtResource("3_7ypqr")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -14.9551, 0, 12.5643)
+
+[node name="rainbowThing" parent="." instance=ExtResource("4_8cac6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 6)

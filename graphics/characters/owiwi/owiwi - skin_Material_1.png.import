@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://eoga7yo3ui7u"
+path.s3tc="res://.godot/imported/owiwi - skin_Material_1.png-28a70e65d4687ea38db0cba0aafc3108.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "6021ce9d92ffc58116a33e8e0a3cbd5f"
+}
+
+[deps]
+
+source_file="res://graphics/characters/owiwi/owiwi - skin_Material_1.png"
+dest_files=["res://.godot/imported/owiwi - skin_Material_1.png-28a70e65d4687ea38db0cba0aafc3108.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
